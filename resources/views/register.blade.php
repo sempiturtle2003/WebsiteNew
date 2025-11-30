@@ -1,28 +1,44 @@
 <x-layout :hideLinks="true">
+    <div class="min-h-screen flex items-center justify-center px-4">
+        <div class="bg-white shadow-lg rounded-xl p-8 w-full max-w-md">
 
-    <div class="min-h-screen flex items-center justify-center">
-        <div class="bg-white shadow-md rounded-lg p-8 w-full max-w-md">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Register</h2>
+            <!-- Title -->
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">
+                Create an Account
+            </h2>
 
-            <form action="{{ url('register') }}" method="POST" class="space-y-4">
+            <!-- Form -->
+            <form action="{{ url('register') }}" method="POST" class="space-y-5">
                 @csrf
 
+                <!-- Full Name -->
                 <div>
-                    <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                    <label for="name" class="block text-sm font-semibold text-gray-700 mb-1">
+                        Full Name
+                    </label>
                     <input type="text" name="name" id="name" required
-                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm h-10 block w-full ...">
+                        class="w-full rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500
+                               shadow-sm px-3 h-11 text-gray-800">
                 </div>
 
+                <!-- Age -->
                 <div>
-                    <label for="age" class="block text-sm font-medium text-gray-700">Age</label>
+                    <label for="age" class="block text-sm font-semibold text-gray-700 mb-1">
+                        Age
+                    </label>
                     <input type="number" name="age" id="age" min="1" required
-                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm h-10 block w-full ...">
+                        class="w-full rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500
+                               shadow-sm px-3 h-11 text-gray-800">
                 </div>
 
+                <!-- Gender -->
                 <div>
-                    <label for="gender" class="block text-sm font-medium text-gray-700">Gender</label>
+                    <label for="gender" class="block text-sm font-semibold text-gray-700 mb-1">
+                        Gender
+                    </label>
                     <select name="gender" id="gender" required
-                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm h-10 block w-full ...">
+                        class="w-full rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500
+                               shadow-sm px-3 h-11 text-gray-800 bg-white">
                         <option value="">Select Gender</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
@@ -30,30 +46,45 @@
                     </select>
                 </div>
 
+                <!-- Email -->
                 <div>
-                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                    <label for="email" class="block text-sm font-semibold text-gray-700 mb-1">
+                        Email Address
+                    </label>
                     <input type="email" name="email" id="email" required
-                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm h-10 block w-full ...">
+                        class="w-full rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500
+                               shadow-sm px-3 h-11 text-gray-800">
                 </div>
 
+                <!-- Password -->
                 <div>
-                    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                    <label for="password" class="block text-sm font-semibold text-gray-700 mb-1">
+                        Password
+                    </label>
                     <input type="password" name="password" id="password" required
-                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm h-10 block w-full ...">
+                        class="w-full rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500
+                               shadow-sm px-3 h-11 text-gray-800">
                 </div>
 
+                <!-- Submit Button -->
                 <div>
                     <button type="submit"
-                        class="w-full bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition">
+                        class="w-full bg-indigo-600 text-white py-3 rounded-lg text-lg
+                               hover:bg-indigo-700 transition-all duration-200 shadow
+                               hover:shadow-lg">
                         Register
                     </button>
                 </div>
             </form>
 
-            <p class="mt-4 text-center text-sm text-gray-500">
+            <!-- Already Registered? -->
+            <p class="mt-6 text-center text-sm text-gray-600">
                 Already have an account?
-                <a href="{{ route('login') }}" class="text-indigo-600 hover:underline">Login here</a>
+                <a href="{{ route('login') }}" class="text-indigo-600 font-semibold hover:underline">
+                    Login here
+                </a>
             </p>
+
         </div>
     </div>
 </x-layout>
